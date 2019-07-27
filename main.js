@@ -1,38 +1,39 @@
 function onSubmit() {
-    let khamsin = document.getElementById("50-input").value;
-    let asharah= document.getElementById("10-input").value;
-    let khamsah = document.getElementById("5-input").value;
-    let ithnain = document.getElementById("2-input").value;
+    let khamsin = parseInt(document.getElementById("50-input").value);
+    let asharah= parseInt(document.getElementById("10-input").value);
+    let khamsah = parseInt(document.getElementById("5-input").value);
+    let ithnain = parseInt(document.getElementById("2-input").value);
 
-    let results = totalAmount(numberOfFifty,numberOfTen,numberOfFive,numberOfTwo);
+    let results = totalAmount(khamsin,asharah,khamsah,ithnain);
     document.getElementById('total-output').innerHTML = 'The total amount is ' + results ;
+    return false;
 
 }
 
 let fifty = 50 ;
 
-function numberOfFifty(ikhamsin,fifty) {
-    return khamsin * fifty ;
+function numberOfFifty(khamsin,fifty) {
+    return parseInt(khamsin) * parseInt(fifty) ;
 }
 
 let ten = 10 ;
 
 function numberOfTen(asharah,ten) {
-    return asharah * ten ;
+    return parseInt(asharah) * parseInt(ten) ;
 }
 
 let five = 5 ;
 
 function numberOfFive(khamsah,five) {
-    return khamsah * five ;
+    return parseInt(khamsah) * parseInt(five) ;
 }
 
 let two = 2 ;
 
 function numberOfTwo(ithnain,two) {
-    return ithnain * two ;
+    return parseInt(ithnain) * parseInt(two) ;
 }
 
 function totalAmount(numberOfFifty,numberOfTen,numberOfFive,numberOfTwo) {
-    return numberOfFifty + numberOfTen + numberOfFive + numberOfTwo ;
+    return numberOfFifty * 50 + numberOfTen * 10 + numberOfFive * 5 + numberOfTwo * 2 ;
 }
